@@ -2,7 +2,7 @@
 
 Descripción breve del sistema:
 
-	Gestión básica de un sistema de stock para una vinoteca. En la vinoteca vendemos vino y toda variedad de bebidas alcoholicas. Este sistema permitirá la alta, baja y modificación de todos los productos disponibles, consulta del stock actual de un producto particular y reabastecer (setear la cantidad de ese producto a una previamente establecida) cuando llegue un pedido.
+Gestión básica de un sistema de stock para una vinoteca. En la vinoteca vendemos vino y toda variedad de bebidas alcoholicas. Este sistema permitirá la alta, baja y modificación de todos los productos disponibles, consulta del stock actual de un producto particular y reabastecer (setear la cantidad de ese producto a una previamente establecida) cuando llegue un pedido.
 
 Entidades:
     • Productos
