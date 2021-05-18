@@ -1,4 +1,4 @@
-#Gestor de Stock – Vinoteca
+# Gestor de Stock – Vinoteca
 
 Descripción breve del sistema:
 
