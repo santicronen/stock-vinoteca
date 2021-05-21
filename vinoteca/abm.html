@@ -1,7 +1,17 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>    
     <body>
+        <body class="align">
+        <header class="_header">
+            <img src="/vinoteca/logo_circular.png" width="150" height="150">
+            <p></p>
+            <h3 class="_title">STOCK VINOTECA</h3>
+        </header>
+        <div class="_body">
         <form name = menu action="" method="get">
-        <h1>ABM PRODUCTOS</h1>
+        <h3 class="_title">ABM PRODUCTOS</h3>
         <p1>Selecciona una opcion para continuar.</p1>
         <dl>
             <dt><a href="abm_alta.php">1. Agregar un nuevo producto</a></dt>
@@ -9,5 +19,8 @@
             <dt><a href="abm_baja.php">3. Eliminar un producto existente</a></dt>
         </dl>
         </form>
+        <input type="button" name="volver" value="Volver al menu principal" onclick="location.replace('index.html');">
+
+        </div>
     </body>
 </html>
