@@ -1,7 +1,7 @@
 <?php
+include "conexion.php";
 if(!isset($_GET["productoID"])) exit();
 $id = $_GET["productoID"];
-include_once "conexion.php";
 $sql = $base_de_datos->prepare("SELECT * FROM producto WHERE productoID = ?;");
 $sql->execute([$id]);
 $producto = $sql->fetch(PDO::FETCH_OBJ);
