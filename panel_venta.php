@@ -10,7 +10,7 @@
         <div class="_body">
         <table>
             // generar VENTAID CONSULTA
-            <form name="panel" action="detalle_venta.php" method="get">
+            <form name="panel" action="detalle_venta.php" method="get" required>
                 <tr>Fecha </tr>
                 <input type="date" name="fecha" required><br><br>
                 <tr>Cliente </tr>

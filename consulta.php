@@ -1,3 +1,8 @@
+<?php
+include "conexion.php";
+$productoID = $_GET["productoID"];
+?>
+
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
@@ -36,8 +41,8 @@
                     <td><?php echo $a['productoCosto'];?></td>
                     <td><?php echo $a['productoPrecio'];?></td>
                     <td><?php echo $a['productoStock'];?></td>
-                    <td><input type="button" name="modificar" value="Modificar" onclick="location.replace('amb_mod.php');"</td>
-                    <td><input type="button" name="eliminar" value="Eliminar" onclick="location.replace('amb_baja.php');"</td>
+                    <td><input type="button" name="modificar" value="Modificar" href="<?php echo "abm_mod.php?productoID=" . $productoID ?>";"</td>
+                    <td><input type="button" name="eliminar" value="Eliminar" onclick="location.replace('abm_baja.php');"</td>
                 </tr><?php
                 }
                 ?>

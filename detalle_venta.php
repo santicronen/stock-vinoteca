@@ -1,7 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION["carrito"])) $_SESSION["carrito"] = [];
+$granTotal = 0;
+?>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
-    </head>    
+    </head>
     <body>
         <body class="align">
         <header class="_header">
@@ -12,12 +16,22 @@
         <?php
         include "conexion.php";
         ?>
-        <div class="_body">
-            <form method="post" action="carrito_agregar.php">
-                <label for="codigo">ID </label>
-                <br><input autofocus name="ID" required type="text" id="ID" placeholder="Inserta un ID">
-
-            </form>
+        <form method="get" action="detalle_venta_db.php">
+			<label for="codigo">Código de producto:</label>
+			<input autocomplete="off" autofocus class="form-control" name="productoID" required type="text" id="productoID" placeholder="Escribe el código">
+		</form>
+		<br><br>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Descripción</th>
+					<th>Precio de venta</th>
+					<th>Cantidad</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+		</table>
         <?php
         #$sql = "SELECT * FROM venta_detalle WHERE ventaID = $ventaID" // todo lo que vendi en ventaID, vendria de la pag anterior
         // ejecutar query?>
