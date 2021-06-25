@@ -19,21 +19,7 @@
                 <br>
 
                 <label for="var">Nombre de producto</label><br>
-                <input type="text" id="var" name=productoNombre required>
-                <br>                
-                <label for="var">Empresa</label><br>
-
-                <select name="empresaID">
-                    <?php
-                    $sql = "SELECT * FROM empresa ORDER BY empresaID ASC";              
-                    $resu = mysqli_query($conexion,$sql) or die ($sql . mysqli_error($conexion));               
-                    while($a = mysqli_fetch_array($resu))
-                    {
-                    ?>
-                            <option value='<?php echo $a['empresaID']; ?>'><?php echo $a['empresaNombre']; ?></option>
-                    <?php
-                }?>
-                </select>
+                <input type="text" id="var" name=productoNombre required>               
 
                 <br><label for="var">Costo de producto</label><br>
                     <input type="number" id="var" name=productoCosto>
@@ -47,7 +33,7 @@
                     
 
                 <br><br><input type="submit" name="enviar" value="Enviar">
-                <input type="button" name="volver" value="Volver al menu principal" onclick="location.replace('abm.html');">
+                <input type="button" name="volver" value="Volver al menu principal" onclick="location.replace('index.html');">
         </form>
         </div>
     </body>

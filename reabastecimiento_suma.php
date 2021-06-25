@@ -2,9 +2,11 @@
     <body>
         <?php
         include "conexion.php";
-        $producto = $_GET['producto'];
+        $productoID = $_POST['productoID'];
+        $productoNombre = $_POST['productoNombre'];
+        $productoStock = $_POST['productoStock'];
 
-        $sql = 
+        $sql = "UPDATE producto SET productoStock = $productoStock WHERE productoID = $productoID";
 
         $resu = mysqli_query($conexion, $sql) or die ($sql . mysqli_error($conexion));
         ?>
@@ -12,5 +14,5 @@
 </html>
 <script>
     alert("Se reabastecio el producto.");
-    location.replace("venta.php");
+    location.replace("index.html");
 </script>

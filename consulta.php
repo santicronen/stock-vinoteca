@@ -1,6 +1,5 @@
 <?php
 include "conexion.php";
-#$productoID = $_GET["productoID"];
 ?>
 
 <html>
@@ -29,7 +28,7 @@ include "conexion.php";
             </tr>
             
                 <?php
-                $sql = "SELECT * FROM producto ORDER BY productoID";
+                $sql = "SELECT * FROM producto WHERE productoBaja = 1 ORDER BY productoID";
 
                 $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 
@@ -41,8 +40,8 @@ include "conexion.php";
                     <td><?php echo $a['productoCosto'];?></td>
                     <td><?php echo $a['productoPrecio'];?></td>
                     <td><?php echo $a['productoStock'];?></td>
-                    <td><input type="button" name="modificar" value="Modificar" href="abm_mod.php";</td>
-                    <td><input type="button" name="eliminar" value="Eliminar" onclick="location.replace('abm_baja.php');"</td>
+                    <td><a href="abm_mod.php?productoID=<?php echo $a['productoID'];?>">Modificar</a></td>
+                    <td><a href="abm_baja.php?productoID=<?php echo $a['productoID'];?>">Eliminar</a></td>
                 </tr><?php
                 }
                 ?>

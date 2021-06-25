@@ -1,24 +1,44 @@
+<?php include "conexion.php"; ?>
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>    
     <body>
-        <?php
-        include "conexion.php";
-        ?>
-        <form name="reabastecimiento" action="reabastecimiento_suma.php" method="get">
+        <body class="align">
+        <header class="_header">
+            <img src="/vinoteca/logo_circular.png" width="150" height="150">
+            <p></p>
+            <h3 class="_title">REABASTECIMIENTO</h3>
+        </header>
+        <div class="_body"> 
+
+        <form name="reabastecimiento" action="reabastecimiento_suma.php" method="post">
             <h2>Panel de Reabastecimiento</h2>
-            <input type="button" name="volver" value="Volver al menu principal" onclick="location.replace('index.html');">
             <table>
                 <tr>
-                    <td>Codigo de producto</td>
-                    <td><input type="text" name="productoID"></td>
+                    <td>Producto</td>
+                    <td><select name="producto" id="productoID" style="width: 170px; height:35px; margin-top:-5px;">
+                <?php
+                        $sql = "SELECT * FROM producto WHERE productoBaja = 1 ORDER BY productoID";
+                        $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
+
+	                	while($a = mysqli_fetch_array($resu)){
+	                ?>
+	                	<option id="productoID" required value="<?php echo $a['productoID']?>"><?php echo $a['productoID'] ?> - <?php echo $a['productoNombre']; ?></option>
+	                <?php
+	                }
+			    ?>
+                </td>
+            </select>
                 </tr>
                 <tr>
                     <td>Cantidad</td>
-                    <td><input type="text" name="productoStock"></td>
+                    <td><input type="text" id="productoStock" name="productoStock"></td>
                 </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" name="enviar" value="Enviar"></td>
-                </tr>
-            </table>
+            </table><br>
+            <input type="submit" name="enviar" value="Enviar">
         </form>
+        <input type="button" name="volver" value="Volver al menu principal" onclick="location.replace('index.html');">
+        </div>
     </body>
 </html>
