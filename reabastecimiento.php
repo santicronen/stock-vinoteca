@@ -12,19 +12,19 @@
         </header>
         <div class="_body"> 
 
-        <form name="reabastecimiento" action="reabastecimiento_suma.php" method="post">
+        <form action="reabastecimiento_suma.php" method="post">
             <h2>Panel de Reabastecimiento</h2>
             <table>
                 <tr>
                     <td>Producto</td>
-                    <td><select name="producto" id="productoID" style="width: 170px; height:35px; margin-top:-5px;">
+                    <td><select name="productoID" id="productoID" style="width: 170px; height:35px; margin-top:-5px;">
                 <?php
                         $sql = "SELECT * FROM producto WHERE productoBaja = 1 ORDER BY productoID";
                         $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 
 	                	while($a = mysqli_fetch_array($resu)){
 	                ?>
-	                	<option id="productoID" required value="<?php echo $a['productoID']?>"><?php echo $a['productoID'] ?> - <?php echo $a['productoNombre']; ?></option>
+	                	<option id="productoID" name="productoID" value="<?php echo $a['productoID']?>"><?php echo $a['productoID'] ?> - <?php echo $a['productoNombre']; ?></option>
 	                <?php
 	                }
 			    ?>

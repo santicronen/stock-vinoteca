@@ -3,7 +3,6 @@
         <?php
         include "conexion.php";
         $productoID = $_POST['productoID'];
-        $productoNombre = $_POST['productoNombre'];
         $productoStock = $_POST['productoStock'];
 
         $sql = "UPDATE producto SET productoStock = $productoStock WHERE productoID = $productoID";

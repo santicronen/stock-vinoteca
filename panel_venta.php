@@ -17,13 +17,12 @@ $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
         <table>
             <form name="panel" action="detalle_venta.php" method="post">
                 <?php 
-                $sql = "SELECT * FROM venta ORDER BY ventaID DESC LIMIT 1";
-                $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
+                $sql = "SELECT * FROM venta ORDER BY ventaID DESC";
+                $resu = mysqli_query($conexion, $sql);
                 while ($a = mysqli_fetch_array($resu))
                 {
                 ?>
-                <input type="text" name="ventaID" id="ventaID" value="<?php $a['ventaID'] ?>">
-                <input type="text" name="ventaFecha" id="ventaFecha" value="<?php $a['ventaFecha'] ?>">
+                <input type="hidden" name="ventaID" id="ventaID" value="<?php $a['ventaID'] ?>">
                 <?php } ?>
                 <tr>Cliente </tr>
                 <input type="text" name="clienteNombre" required><br><br>

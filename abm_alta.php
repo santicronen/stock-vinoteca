@@ -23,7 +23,6 @@
 
                 <br><label for="var">Costo de producto</label><br>
                     <input type="number" id="var" name=productoCosto>
-                
 
                 <br><label for="var">Precio de producto</label><br>
                     <input type="number" id="var" name=productoPrecio>
