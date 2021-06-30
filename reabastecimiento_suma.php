@@ -12,6 +12,6 @@
     </body>
 </html>
 <script>
-    alert("Se reabastecio el producto.");
+    alert("Se agregó el producto.");
     location.replace("index.html");
 </script>

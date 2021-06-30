@@ -94,7 +94,7 @@ $resu = mysqli_query($conexion, $sql);
             <input name="ventaID" type="hidden" value="<?php echo $ventaID ?>">
             <input name="ventaCantidad" type="hidden" value="<?php echo $ventaCantidad ?>">
 			<button type="submit">Terminar venta</button>
-			<button href="./cancelarVenta.php">Cancelar venta</a>
+			<button href="./cancelar_venta.php">Cancelar venta</a>
 		</form>
         </div>
     </body>
