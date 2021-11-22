@@ -1,11 +1,11 @@
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>    
     <body>
         <body class="align">
         <header class="_header">
-            <img src="/vinoteca/logo_circular.png" width="150" height="150">
+            <img src="/vinoteca/css/logo_circular.png" width="150" height="150">
             <p></p>
             <h3 class="_title">STOCK VINOTECA</h3>
         </header>
@@ -14,7 +14,7 @@
         <div class="_body">
         <form name=alta action="abm_alta_db.php" method="get">
             <h3 class="_title">ALTA DE PRODUCTO</h3>
-                <label for="var">Código de producto</label><br>
+                <label for="var">Código de barras</label><br>
                 <input type="number" id="var" name=productoID>
                 <br>
 

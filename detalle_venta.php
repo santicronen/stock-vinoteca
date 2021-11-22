@@ -9,12 +9,12 @@ $resu = mysqli_query($conexion, $sql);
 
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <body class="align">
         <header class="_header">
-            <img src="/vinoteca/logo_circular.png" width="150" height="150">
+            <img src="/vinoteca/css/logo_circular.png" width="150" height="150">
             <p></p>
             <h3 class="_title">PANEL DE VENTA</h3>
         </header>
@@ -31,7 +31,7 @@ $resu = mysqli_query($conexion, $sql);
 			<label for="producto">Producto</label>
 			<select name="productoID" id="productoID" style="width: 170px; height:35px; margin-top:-5px;">
                 <?php
-                        $sql = "SELECT * FROM producto WHERE productoBaja = 1 ORDER BY productoID";
+                        $sql = "SELECT * FROM producto WHERE productoBaja = 0 ORDER BY productoID";
                         $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 
 	                	while($a = mysqli_fetch_array($resu)){

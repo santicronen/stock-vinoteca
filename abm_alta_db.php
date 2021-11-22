@@ -9,7 +9,7 @@
         $productoStock = $_GET['productoStock'];
 
         $sql = "INSERT INTO producto VALUES ('$productoID', '$productoNombre', '$productoCosto', 
-                                            '$productoPrecio', '$productoStock', '1')";
+                                            '$productoPrecio', '$productoStock', '0')";
         
         $resu = mysqli_query($conexion,$sql) or die ($sql . mysqli_error($conexion));
         ?>

@@ -3,12 +3,12 @@ include_once "conexion.php";
 ?>
 
 <head>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<body class="align">
 		<header class="_header">
-			<img src="/vinoteca/logo_circular.png" width="150" height="150">
+			<img src="/vinoteca/css/logo_circular.png" width="150" height="150">
 			<p></p>
 			<h3 class="_title">MODIFICAR PRODUCTO</h3>
 		</header>

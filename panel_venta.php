@@ -5,11 +5,13 @@ $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 ?>
 
 <html>
-    <head><link rel="stylesheet" href="style.css"></head>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
     <body>
     <body class="align">
         <header class="_header">
-            <img src="/vinoteca/logo_circular.png" width="150" height="150">
+            <img src="/vinoteca/css/logo_circular.png" width="150" height="150">
             <p></p>
             <h3 class="_title">PANEL DE VENTA</h3>
         </header>

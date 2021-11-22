@@ -4,12 +4,12 @@ include "conexion.php";
 
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     <body class="align">
         <header class="_header">
-            <img src="/vinoteca/logo_circular.png" width="150" height="150">
+            <img src="/vinoteca/css/logo_circular.png" width="150" height="150">
             <p></p>
             <h3 class="_title">LISTA DE PRODUCTOS</h3>
         </header>
@@ -28,7 +28,7 @@ include "conexion.php";
             </tr>
             
                 <?php
-                $sql = "SELECT * FROM producto WHERE productoBaja = 1 ORDER BY productoID";
+                $sql = "SELECT * FROM producto WHERE productoBaja = 0 ORDER BY productoID";
 
                 $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2021 a las 17:39:20
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Host: 127.0.0.1
+-- Generation Time: Nov 22, 2021 at 03:44 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `vinoteca`
+-- Database: `vinoteca`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producto`
+-- Table structure for table `producto`
 --
 
 CREATE TABLE `producto` (
@@ -33,66 +33,27 @@ CREATE TABLE `producto` (
   `productoCosto` float DEFAULT NULL,
   `productoPrecio` float DEFAULT NULL,
   `productoStock` int(11) DEFAULT NULL,
-  `productoBaja` int(1) DEFAULT 1
+  `productoBaja` int(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `producto`
+-- Dumping data for table `producto`
 --
 
 INSERT INTO `producto` (`productoID`, `productoNombre`, `productoCosto`, `productoPrecio`, `productoStock`, `productoBaja`) VALUES
-(0, 'Fernet Branca 750cc', 250, 550, 25, 1),
-(1, 'Portillo Malbec 750cc', 150, 300, 30, 1),
-(2, 'Cinzano Rosso 750cc', 170, 230, 30, 1),
-(3, 'Coca Cola 2.25L', 150, 260, 20, 1),
-(4, 'Portillo Cabernet 750cc', 150, 250, 14, 1),
-(5, 'Catalpa Malbec 750cc', 650, 890, 30, 1);
+(0, 'Fernet Branca 750cc', 250, 550, 50, 0),
+(1, 'Portillo Malbec 750cc', 150, 300, 50, 0),
+(2, 'Cinzano Rosso 750cc', 170, 230, 29, 0),
+(3, 'Coca Cola 2.25L', 150, 260, 19, 0),
+(4, 'Portillo Cabernet 750cc', 150, 250, 14, 0),
+(5, 'Catalpa Malbec 750cc', 650, 890, 27, 0),
+(6, 'Apolinario London Dry 750cc', 300, 1650, 50, 0),
+(7, 'Fernet Buhero Negro 750cc', 400, 670, 50, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `proveedor`
---
-
-CREATE TABLE `proveedor` (
-  `proveedorID` int(11) NOT NULL,
-  `proveedorNombre` varchar(50) NOT NULL DEFAULT '',
-  `proveedorFlete` int(11) NOT NULL DEFAULT 0 COMMENT 'Costo del flete por proveedor',
-  `tipoID` int(11) NOT NULL DEFAULT 0 COMMENT 'ID del tipo de proveedor'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `proveedor`
---
-
-INSERT INTO `proveedor` (`proveedorID`, `proveedorNombre`, `proveedorFlete`, `tipoID`) VALUES
-(0, 'Branca', 500, 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo_producto`
---
-
-CREATE TABLE `tipo_producto` (
-  `tipoID` int(11) NOT NULL COMMENT 'ID de tipo de producto',
-  `tipoDesc` varchar(50) NOT NULL DEFAULT '0' COMMENT 'Descripción de tipo de producto'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tipo_producto`
---
-
-INSERT INTO `tipo_producto` (`tipoID`, `tipoDesc`) VALUES
-(0, 'Vino'),
-(1, 'Bebida'),
-(2, 'Gaseosa'),
-(3, 'Vermouth');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `venta`
+-- Table structure for table `venta`
 --
 
 CREATE TABLE `venta` (
@@ -103,7 +64,7 @@ CREATE TABLE `venta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `venta`
+-- Dumping data for table `venta`
 --
 
 INSERT INTO `venta` (`productoID`, `ventaID`, `ventaTotal`, `ventaFecha`) VALUES
@@ -125,12 +86,35 @@ INSERT INTO `venta` (`productoID`, `ventaID`, `ventaTotal`, `ventaFecha`) VALUES
 (0, 96, 0, '2021-06-30 15:32:20'),
 (0, 97, 1900, '2021-06-30 15:33:43'),
 (0, 98, 1100, '2021-06-30 15:33:58'),
-(0, 99, 0, '2021-06-30 15:35:51');
+(0, 99, 0, '2021-06-30 15:35:51'),
+(0, 100, 0, '2021-11-01 18:04:30'),
+(0, 101, 2200, '2021-11-01 18:05:05'),
+(0, 102, 0, '2021-11-01 18:07:03'),
+(0, 103, 0, '2021-11-01 18:08:17'),
+(0, 104, 0, '2021-11-01 18:08:18'),
+(0, 105, 2460, '2021-11-01 18:08:53'),
+(0, 106, 0, '2021-11-01 18:10:18'),
+(0, 107, 2430, '2021-11-01 18:10:18'),
+(0, 108, 0, '2021-11-01 18:10:35'),
+(0, 109, 0, '2021-11-15 00:15:17'),
+(0, 110, 0, '2021-11-15 00:16:14'),
+(0, 111, 0, '2021-11-15 00:16:59'),
+(0, 112, 0, '2021-11-15 00:19:10'),
+(0, 113, 0, '2021-11-16 17:04:23'),
+(0, 114, 0, '2021-11-17 13:57:28'),
+(0, 115, 0, '2021-11-17 20:08:53'),
+(0, 116, 0, '2021-11-17 20:13:08'),
+(0, 117, 3100, '2021-11-17 20:18:40'),
+(0, 118, 2800, '2021-11-17 22:07:42'),
+(0, 119, 4700, '2021-11-22 14:20:09'),
+(0, 120, 2200, '2021-11-22 14:21:23'),
+(0, 121, 0, '2021-11-22 14:40:59'),
+(0, 122, 2750, '2021-11-22 14:41:00');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `venta_detalle`
+-- Table structure for table `venta_detalle`
 --
 
 CREATE TABLE `venta_detalle` (
@@ -141,7 +125,7 @@ CREATE TABLE `venta_detalle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `venta_detalle`
+-- Dumping data for table `venta_detalle`
 --
 
 INSERT INTO `venta_detalle` (`ventaID`, `productoID`, `ventaCantidad`, `ventaPrecio`) VALUES
@@ -176,51 +160,57 @@ INSERT INTO `venta_detalle` (`ventaID`, `productoID`, `ventaCantidad`, `ventaPre
 (93, 3, 5, 260),
 (97, 0, 3, 550),
 (97, 4, 1, 250),
-(98, 0, 2, 550);
+(98, 0, 2, 550),
+(101, 0, 4, 550),
+(105, 0, 4, 550),
+(105, 3, 1, 260),
+(107, 0, 4, 550),
+(107, 2, 1, 230),
+(117, 1, 5, 300),
+(117, 2, 2, 230),
+(117, 4, 1, 250),
+(117, 5, 1, 890),
+(118, 0, 3, 550),
+(118, 3, 1, 260),
+(118, 5, 1, 890),
+(119, 0, 6, 550),
+(119, 3, 1, 260),
+(119, 4, 1, 250),
+(119, 5, 1, 890),
+(120, 0, 4, 550),
+(122, 0, 5, 550);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `producto`
+-- Indexes for table `producto`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`productoID`) USING BTREE;
 
 --
--- Indices de la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  ADD PRIMARY KEY (`proveedorID`) USING BTREE;
-
---
--- Indices de la tabla `tipo_producto`
---
-ALTER TABLE `tipo_producto`
-  ADD PRIMARY KEY (`tipoID`) USING BTREE;
-
---
--- Indices de la tabla `venta`
+-- Indexes for table `venta`
 --
 ALTER TABLE `venta`
   ADD PRIMARY KEY (`ventaID`);
 
 --
--- Indices de la tabla `venta_detalle`
+-- Indexes for table `venta_detalle`
 --
 ALTER TABLE `venta_detalle`
   ADD PRIMARY KEY (`ventaID`,`productoID`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `venta`
+-- AUTO_INCREMENT for table `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `ventaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `ventaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

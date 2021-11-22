@@ -1,7 +1,7 @@
 <?php
 include "conexion.php";
 $productoID = $_GET['productoID'];
-$sql = "UPDATE producto SET productoBaja = 0 WHERE productoID = $productoID";
+$sql = "UPDATE producto SET productoBaja = 1 WHERE productoID = $productoID";
 $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 ?>
 
@@ -11,7 +11,7 @@ $resu = mysqli_query($conexion, $sql) or die($sql . mysqli_error($conexion));
 <body>
     <body class="align">
             <header class="_header">
-                <img src="/vinoteca/logo_circular.png" width="150" height="150">
+                <img src="/vinoteca/css/logo_circular.png" width="150" height="150">
                 <p></p>
                 <h3 class="_title">ELIMINAR PRODUCTO</h3>
             </header>
